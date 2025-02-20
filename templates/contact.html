@@ -1,0 +1,167 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI based tool For Preliminary Diagnosis</title>
+    <link
+      href="/static/css/bootstrap.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="/static/css/style.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="application/x-javascript">
+      addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/css/flexslider.css"
+      type="text/css"
+      media="screen"
+    />
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/modernizr.custom.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <div class="banner1">
+      <div class="container">
+        <div class="header" style="display: flex; justify-content: center">
+          <div class="head-nav">
+            <span class="menu"> </span>
+            <ul class="cl-effect-1">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">about</a></li>
+              <li><a href="/admin">Admin</a></li>
+              <li class="active"><a href="/contact">Patient</a></li>
+              <li><a href="/doctor">Doctor</a></li>
+              <div class="clearfix"></div>
+            </ul>
+          </div>
+
+          <div class="clearfix"></div>
+        </div>
+        <!-- script-for-nav -->
+        <script>
+          $("span.menu").click(function () {
+            $(".head-nav ul").slideToggle(300, function () {
+              // Animation complete.
+            });
+          });
+        </script>
+        <!-- script-for-nav -->
+        <div class="logo1">
+          <h1>
+            <b
+              >AI based tool For Preliminary Diagnosis Of Dermatological
+              Manifestationsing</b
+            >
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- header -->
+    <div class="main_bg">
+      <div class="container">
+        <div class="main">
+          <div class="section group">
+            <div class="col span_1_of_2">
+              <div class="contact_info">
+                {% with messages = get_flashed_messages() %} {% if messages %}
+                <ul class="flashes">
+                  {% for message in messages %}
+                  <li>{{ message }}</li>
+                  {% endfor %}
+                </ul>
+                {% endif %} {% endwith %}
+
+                <h3 class="style">Find Us Here</h3>
+                <div class="map">
+                  <br /><small
+                    ><a
+                      href="https://www.google.co.in/maps/place/Tirupati,+Andhra+Pradesh/@13.6277325,79.3836012,13z/data=!4m6!3m5!1s0x3a4d4b0f88620427:0xcf4152d1daca0cac!8m2!3d13.6287557!4d79.4191795!16zL20vMDg5bHJj?entry=ttu"
+                      style="color: #555555; text-align: left; font-size: 13px"
+                      >View Our Address In Google Map</a
+                    ></small
+                  >
+                  <a href="signin" class="btn btn-info">Sign In Here</a>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+
+            <div class="col span_2_of_4">
+              <div class="contact-form">
+                <h3 class="style">Sign Up Page</h3>
+
+                <form method="post" action="/contact">
+                  <div>
+                    <span><label>NAME</label></span>
+                    <span
+                      ><input name="userName" type="text" class="textbox"
+                    /></span>
+                  </div>
+                  <div>
+                    <span><label>E-MAIL</label></span>
+                    <span
+                      ><input name="userEmail" type="text" class="textbox"
+                    /></span>
+                  </div>
+                  <div>
+                    <span><label>PASSWORD</label></span>
+                    <span
+                      ><input name="userPassword" type="text" class="textbox"
+                    /></span>
+                  </div>
+                  <div>
+                    <span><label>MOBILE</label></span>
+                    <span
+                      ><input name="userPhone" type="text" class="textbox"
+                    /></span>
+                  </div>
+                  <div>
+                    <span><label>ADDRESS</label></span>
+                    <span><textarea name="userAddr"> </textarea></span>
+                  </div>
+                  <div>
+                    <span><input type="submit" value="Register" /></span>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <p>
+          © 2024 All rights reserved | Design by
+          <a href="#">Dermatology Centre</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

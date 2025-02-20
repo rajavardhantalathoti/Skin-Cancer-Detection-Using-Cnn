@@ -1,0 +1,370 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI based tool For Preliminary Diagnosis</title>
+
+    <link
+      href="/static/css/bootstrap.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="/static/css/style.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="application/x-javascript">
+      addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/css/flexslider.css"
+      type="text/css"
+      media="screen"
+    />
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/modernizr.custom.js"></script>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h5 {
+      font-weight: 100px;
+      color: rgb(16, 166, 44);
+    }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <!-- header -->
+    <div class="banner1">
+      <div class="container">
+        <div class="header">
+          <div class="head-nav">
+            <span class="menu"> </span>
+            <ul class="cl-effect-1">
+              <li class="active"><a href="/upload">Classification</a></li>
+              <li><a href="/doctor_info">Doctor Info</a></li>
+              <li><a href="/signin">Sign Out</a></li>
+              <div class="clearfix"></div>
+            </ul>
+          </div>
+
+          <div class="clearfix"></div>
+        </div>
+        <!-- script-for-nav -->
+        <script>
+          $("span.menu").click(function () {
+            $(".head-nav ul").slideToggle(300, function () {
+              // Animation complete.
+            });
+          });
+        </script>
+        <!-- script-for-nav -->
+        <div class="logo1" style="font-size: xx-large">
+          <h1>
+            <b
+              >AI based tool For Preliminary Diagnosis Of Dermatological
+              Manifestationsing</b
+            >
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- header -->
+    <div class="main_bg">
+      <div class="container">
+        <div class="main">
+          <div class="section group">
+            <div class="col span_1_of_2">
+              <div class="contact_info">
+                {% with messages = get_flashed_messages() %} {% if messages %}
+                <ul class="flashes">
+                  {% for message in messages %}
+                  <li>{{ message }}</li>
+                  {% endfor %}
+                </ul>
+                {% endif %} {% endwith %}
+              </div>
+              <div class="clear"></div>
+            </div>
+
+            <div class="col span_2_of_4">
+              <div class="contact-form">
+                <h3 class="style">SKIN DISEASE CLASSIFICATION</h3>
+
+                <div
+                  class="row"
+                  style="
+                    border: 1px solid;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                >
+                  <div class="col-6 col-md-6">
+                    <img
+                      src=" {{url_for('send_image', filename=image_name)}}"
+                      style="
+                        width: 427px;
+                        height: 300px;
+                        border-radius: 50%;
+                        border: 1px solid greenyellow;
+                      "
+                    />
+                  </div>
+                  <div class="col-6 col-md-6">
+                    <b>Result: </b>{{text}}<br />
+                    <b>Causes of Disease:</b> {{msg}}
+                    <b>Disease Severity is:</b> {{msg1}}<br />
+
+                    {% block body %} {% if text == "Actinic Keratosis" %}
+                    <!-- <div class="container"> -->
+                    <h5>Remedies for Actinic Keratosis</h5>
+                    <ul>
+                      <li>
+                        <strong>Cryotherapy:</strong> Freezing the lesion to
+                        destroy abnormal cells.
+                      </li>
+                      <li>
+                        <strong>Topical Treatments:</strong> Applying creams
+                        like 5-fluorouracil or imiquimod to the affected area.
+                      </li>
+                      <li>
+                        <strong>Chemical Peels:</strong> Using chemical
+                        solutions to peel off the top layers of skin.
+                      </li>
+                      <li>
+                        <strong>Laser Therapy:</strong> Removing the affected
+                        skin with a precise laser treatment.
+                      </li>
+                    </ul>
+                    <!-- </div> -->
+                    {% elif text == "Basal Cell Carcinoma" %}
+                    <!-- <div class="container"> -->
+                    <h5>Remedies for Basal Cell Carcinoma</h5>
+                    <ul>
+                      <li>
+                        <strong>Surgical Excision:</strong> Removing the
+                        cancerous tissue through surgery.
+                      </li>
+                      <li>
+                        <strong>Mohs Surgery:</strong> A precise surgical method
+                        to remove cancer layer by layer.
+                      </li>
+                      <li>
+                        <strong>Radiation Therapy:</strong> Using radiation to
+                        destroy cancer cells.
+                      </li>
+                      <li>
+                        <strong>Topical/Oral Medications:</strong> Using
+                        prescribed medicines for less invasive types.
+                      </li>
+                    </ul>
+                    <!-- </div> -->
+                    {% elif text == "Dermatofibroma" %}
+                    <!-- <div class="container"> -->
+                    <h5>Remedies for Dermatofibroma</h5>
+                    <ul>
+                      <li>
+                        <strong>Surgical Removal:</strong> If the lesion is
+                        painful or growing, it can be surgically removed.
+                      </li>
+                      <li>
+                        <strong>Cryotherapy:</strong> Freezing the lesion to
+                        remove it.
+                      </li>
+                    </ul>
+                    <!-- </div> -->
+                    {% elif text == "Melanoma" %}
+                    <!-- <div class="container"> -->
+                    <h5>Remedies for Melanoma</h5>
+                    <ul>
+                      <li>
+                        <strong>Surgical Removal:</strong> Excising the melanoma
+                        and some of the surrounding tissue.
+                      </li>
+                      <li>
+                        <strong>Immunotherapy:</strong> Boosting the body's
+                        immune system to fight cancer cells.
+                      </li>
+                      <li>
+                        <strong>Targeted Therapy:</strong> Using drugs to target
+                        specific genes and proteins in cancer cells.
+                      </li>
+                      <li>
+                        <strong>Chemotherapy:</strong> Using drugs to kill
+                        cancer cells.
+                      </li>
+                      <li>
+                        <strong>Radiation Therapy:</strong> Using high-energy
+                        rays to kill cancer cells.
+                      </li>
+                    </ul>
+                    <!-- </div> -->
+                    {% elif text == "Nevus" %}
+                    <!-- <div class="container"> -->
+                    <h5>Remedies for Nevus (Moles)</h5>
+                    <ul>
+                      <li>
+                        <strong>Surgical Removal:</strong> Removing the mole if
+                        it is suspicious or unwanted.
+                      </li>
+                    </ul>
+
+                    {% elif text == "Pigmented Benign Keratosis" %}
+                    <!-- <div class="container"> -->
+                    <h5>Remedies for Pigmented Benign Keratosis</h5>
+                    <ul>
+                      <li>
+                        <strong>Cryotherapy:</strong> Freezing the growth to
+                        remove it.
+                      </li>
+                      <li>
+                        <strong>Laser Therapy:</strong> Using a laser to remove
+                        the growth.
+                      </li>
+                      <li>
+                        <strong>Surgical Removal:</strong> Excising the lesion
+                        if needed.
+                      </li>
+                    </ul>
+                    {% elif text == "Seborrheic Keratosis" %}
+                    <!-- <div class="container"> -->
+                    <h5>Remedies for Seborrheic Keratosis</h5>
+                    <ul>
+                      <li>
+                        <strong>Cryotherapy:</strong> Freezing off the growths.
+                      </li>
+                      <li>
+                        <strong>Curettage:</strong> Scraping off the lesion with
+                        a special tool.
+                      </li>
+                      <li>
+                        <strong>Laser Therapy:</strong> Removing the growths
+                        with a laser.
+                      </li>
+                    </ul>
+
+                    {% elif text == "Squamous Cell Carcinoma" %}
+                    <!-- <div class="container"> -->
+                    <h5>Remedies for Squamous Cell Carcinoma</h5>
+                    <ul>
+                      <li>
+                        <strong>Surgical Removal:</strong> Excising the
+                        cancerous tissue.
+                      </li>
+                      <li>
+                        <strong>Mohs Surgery:</strong> A detailed method to
+                        remove cancer layer by layer.
+                      </li>
+                      <li>
+                        <strong>Cryotherapy:</strong> Freezing the cancer cells.
+                      </li>
+                      <li>
+                        <strong>Radiation Therapy:</strong> Using radiation to
+                        destroy the cancer cells.
+                      </li>
+                      <li>
+                        <strong>Topical Chemotherapy:</strong> Applying
+                        chemotherapy creams to the affected area.
+                      </li>
+                    </ul>
+
+                    <!-- </div> -->
+                    {% else %}
+                    <h5>Remedies for Vascular Lesion</h5>
+                    <ul>
+                      <li>
+                        <strong>Laser Therapy:</strong> Using lasers to treat
+                        the lesion.
+                      </li>
+                      <li>
+                        <strong>Sclerotherapy:</strong> Injecting a solution to
+                        collapse the vessel.
+                      </li>
+                      <li>
+                        <strong>Surgical Removal:</strong> Removing the lesion
+                        if necessary.
+                      </li>
+                    </ul>
+                    {% endif %} {% endblock %}
+                  </div>
+                </div>
+                <a href="/upload" class="btn btn-info">Return Back</a>
+              </div>
+              <table style="margin-left: 394px;"><b>
+                      
+                <th style="border: 3px solid black;color:black">Name</th>
+                <th style="border: 3px solid black;color:black">Email</th>
+                <th style="border: 3px solid black;color:black">Gender</th>
+                <th style="border: 3px solid black;color:black">Age</th>
+                <th style="border: 3px solid black;color:black">Phone Number</th>
+                <th style="border: 3px solid black;color:black">Experience</th>
+                <th style="border: 3px solid black;color:black">Hospital Name</th>
+                <th style="border: 3px solid black;color:black">Address</th>
+                <th style="border: 3px solid black;color:black">Appointment</th>
+                <th style="border: 3px solid black;color:black">Let's Chat</th>
+
+
+    {% for id,name,email,pass,age,gender,hname,addr,exp,ph in data %}
+    <tr>
+        <td style="border: 3px solid black;color:black">{{name}}</td>
+        <td style="border: 3px solid black;color:black">{{email}}</td>
+        <td style="border: 3px solid black;color:black">{{gender}}</td>
+        <td style="border: 3px solid black;color:black">{{age}}</td>
+        <td style="border: 3px solid black;color:black">{{ph}}</td>
+        <td style="border: 3px solid black;color:black">{{exp}}</td>
+        <td style="border: 3px solid black;color:black">{{hname}}</td>
+        <td style="border: 3px solid black;color:black">{{addr}}</td>
+        <td style="border: 3px solid black;color:black"><a href="{{ url_for("appointment", name=name, email=email, hname=hname, addr=addr)}}" class="btn btn-success">Book</a></td>
+        <td style="border: 3px solid black;color:black"><a href="{{ url_for("expertchat", email=email)}}" class="btn btn-info">Chat</a></td>
+    </tr>
+    {% endfor %}
+
+
+            </b> </table>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <p>
+          © 2024 All rights reserved | Design by
+          <a href="#">Dermatology Centre</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
