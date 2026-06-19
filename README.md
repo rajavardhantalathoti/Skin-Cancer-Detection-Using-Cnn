@@ -3,8 +3,11 @@
 [![Python](https://img.shields.io/badge/python-3.x-blue?style=flat-square&logo=python)](#)
 [![TensorFlow](https://img.shields.io/badge/tensorflow-latest-orange?style=flat-square&logo=tensorflow)](#)
 [![Flask](https://img.shields.io/badge/flask-latest-lightgrey?style=flat-square&logo=flask)](#)
-An enhanced clinical Decision Support System (DSS) designed to classify skin lesions into 9 distinct dermatological categories using transfer learning models, while simultaneously assessing overall clinical severity using demographic risk parameters.
-## 🌟 Project Overview & Architecture
+## 📖 Detailed Project Description
+This project introduces an advanced clinical Decision Support System (DSS) tailored for dermatological diagnostics. Skin cancer, being one of the most prevalent forms of malignancy, requires early and highly accurate detection to improve patient survival rates. Traditional visual inspections by dermatologists can be subjective and time-consuming. To address this, we developed a comprehensive diagnostic pipeline that leverages deep transfer learning models to automatically classify dermoscopic images into one of 9 distinct skin lesion categories, aligning with the ISIC (International Skin Imaging Collaboration) standards.
+Beyond basic image classification, this system pioneers a holistic, patient-centric approach by integrating a **Clinical Severity Assessment** module. By gathering key demographic and historical patient data—such as age, gender, symptom duration, BMI, and infection history—the system employs Linear Discriminant Analysis (LDA) and Long Short-Term Memory (LSTM) networks to calculate an overarching severity score (High, Medium, or Low). 
+This dual-pipeline architecture ensures that medical professionals not only receive a highly accurate visual pathology classification but also a contextual urgency rating, facilitating rapid triage and prioritized patient care. The entire backend is securely managed via relational databases, wrapped in a user-friendly Flask web portal designed for seamless interaction between patients and clinicians.
+## 🌟 Architecture & Workflow
 ```mermaid
 graph TD
     A[Patient Portal] --> B[Inputs]
@@ -24,16 +27,16 @@ Supported Architectures:
 MobileNet (mobilenet_fixed.keras): Highly optimized transfer learning model (
 20.2
  MB
-20.2 MB weights file) with Depthwise Conv2D adjustments for seamless execution under modern Keras 3.
+20.2 MB weights file) with Depthwise Conv2D adjustments for seamless execution under modern Keras 3. It provides rapid inference suitable for edge devices.
 ResNet50 (ResNet50.h5): Pre-trained deep residual network (
 128.2
  MB
-128.2 MB weights file) for robust feature extraction.
+128.2 MB weights file) that utilizes skip connections to solve the vanishing gradient problem, ensuring highly robust feature extraction.
 Custom CNN (CNN.h5): Deep convolutional neural network (
 268.8
  MB
-268.8 MB weights file) trained from scratch to extract localized spatial features.
-Target Classes: Classifies images into 9 distinct dermatological pathologies based on the ISIC dataset guidelines:
+268.8 MB weights file) trained entirely from scratch on our dataset to extract highly localized, domain-specific spatial features.
+Target Classes: Classifies images into 9 distinct dermatological pathologies:
 Actinic Keratosis
 Basal Cell Carcinoma
 Dermatofibroma
@@ -138,4 +141,5 @@ Skin cancer detection using DCNN/
     │   └── BACK END/              # Background pipelines & model storage
     │       └── models/            # CNN.h5, ResNet50.h5, mobilenet_fixed.keras
     │
+    └── TRANSFER LEARNING MODELS/  # Alternate weights & architecture validation
     └── TRANSFER LEARNING MODELS/  # Alternate weights & architecture validation
